@@ -24,6 +24,10 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('has-login-background');
+
     this.form = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]

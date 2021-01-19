@@ -21,7 +21,7 @@
                             <h6 class="card-subtitle mb-2 text-muted">{{ event.start_date | date:'EEEE'}} | {{ event.start_date | date:'MMM d, y'}} - {{ event.start_date | date:'shortTime'}} </h6>
                             <strong>Location:</strong>
                             <p class="card-text">{{ event.address_street}}, {{ event.city }}, {{ event.state_abbr }} {{ event.postal_code }}</p>
-                            <a href="event-node.html" class="card-link stretched-link">Begin Check-In <i
+                            <a [routerLink]="['/event-checkin/' + event.id + '/' + id]" class="card-link stretched-link">Begin Check-In <i
                                     class="fas fa-arrow-alt-right"></i></a>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ export class EventListService {
         private authService: AuthenticationService
         ) { }
 
-    getEvents(event_type_id: any) {
+    getEvents(eventTypeId: any) {
         const token = this.authService.getToken() || '';
         const httpOptions = {
             headers: new HttpHeaders({
@@ -20,9 +20,20 @@ export class EventListService {
                 'Content-Type': 'application/json'
             }),
             params: new HttpParams({
-                fromString: "event_type_id=" + event_type_id
+                fromString: "event_type_id=" + eventTypeId
             }),
         };
         return this.http.get<any>(`https://monte.campaignrep.org/api/event`, httpOptions);
+    }
+
+    getEventById(eventId: any) {
+        const token = this.authService.getToken() || '';
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'X-CSRF-Token': token,
+                'Content-Type': 'application/json'
+            })
+        };
+        return this.http.get<any>(`https://monte.campaignrep.org/api/event/` + eventId, httpOptions);
     }
 }

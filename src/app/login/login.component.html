@@ -1,16 +1,18 @@
 <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <img class="mb-4" src="assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"  placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" required>
-    <div class="checkbox mb-3">
-        <label>
-    <input type="checkbox" value="remember-me"> Remember me
-  </label>
-    </div>
-    <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2021<br>Powered by CampaignRep.com</p>
+  <img class="mb-4" src="../../assets/logo/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" formControlName="username" class="form-control"
+    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" formControlName="password" class="form-control"
+    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" required>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2021<br>Powered by CampaignRep.com</p>
 </form>

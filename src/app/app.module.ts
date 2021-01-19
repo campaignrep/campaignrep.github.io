@@ -16,6 +16,9 @@ import { EventTypesService } from './services/event-types.service';
 import { HttpRequestInterceptor } from './interceptor/http-request.interceptor';
 import { EventListingsComponent } from './event-listings/event-listings.component';
 import { EventListService } from './services/event-list.service';
+import { EventCheckinComponent } from './event-checkin/event-checkin.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { EventListService } from './services/event-list.service';
     NavbarComponent,
     DashboardComponent,
     EventTypesComponent,
-    EventListingsComponent
+    EventListingsComponent,
+    EventCheckinComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { EventListService } from './services/event-list.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    NgbModule
   ],
   providers: [
     AuthenticationService,

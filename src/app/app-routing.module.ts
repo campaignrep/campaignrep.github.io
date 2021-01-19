@@ -7,10 +7,11 @@ import {
 } from './auth/auth-guard.service';
 import { EventTypesComponent } from './event-types/event-types.component';
 import { EventListingsComponent } from './event-listings/event-listings.component';
+import { EventCheckinComponent } from './event-checkin/event-checkin.component';
 
 const routes: Routes = [
   { 
-    path: '', component: LoginComponent 
+    path: '', component: DashboardComponent 
   },
   { 
     path: 'login', component: LoginComponent  
@@ -25,6 +26,10 @@ const routes: Routes = [
   },
   { 
     path: 'event-listings/:id', component: EventListingsComponent,
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'event-checkin/:eventId/:eventTypeId', component: EventCheckinComponent,
     canActivate: [AuthGuard] 
   }
 ];
