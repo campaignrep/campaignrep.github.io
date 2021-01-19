@@ -1,0 +1,35 @@
+<div class="container" style="max-width: 800px;">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+        <a class="btn btn-secondary" [routerLink]="['/event-types']" role="button">
+            <i class="fad fa-arrow-alt-left fa-fw"></i> Event Types</a>
+    </nav>
+
+    <main role="main">
+        <div class="jumbotron">
+            <div class="col-sm-8 mx-auto">
+                <h1 class="h2 mb-4">Food Pantry's</h1>
+                <h5 class="mb-5">Select event:</h5>
+
+                <ng-container *ngIf="loaded && events">
+                    <div *ngFor="let event of events">                     
+                    <div class="card border-primary mb-5">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3" style="font-size: 18px; line-height: 1.4;">
+                                {{ event.title }} - {{ event.start_date | date:'EEEE'}} ({{ event.start_date | date:'M-d-y	'}})
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ event.start_date | date:'EEEE'}} | {{ event.start_date | date:'MMM d, y'}} - {{ event.start_date | date:'shortTime'}} </h6>
+                            <strong>Location:</strong>
+                            <p class="card-text">{{ event.address_street}}, {{ event.city }}, {{ event.state_abbr }} {{ event.postal_code }}</p>
+                            <a href="event-node.html" class="card-link stretched-link">Begin Check-In <i
+                                    class="fas fa-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+    </main>
+
+</div>

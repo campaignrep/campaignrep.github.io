@@ -48,8 +48,11 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          console.log('Token is ', data);
-          this.router.navigate([this.returnUrl]);
+          //this.router.navigate([this.returnUrl]);
+          this.router.navigate([this.returnUrl])
+            .then(() => {
+              window.location.reload();
+            });
         },
         error => {
 

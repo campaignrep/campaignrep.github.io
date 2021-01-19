@@ -1,0 +1,23 @@
+<div class="container" style="max-width: 800px;">
+    <main role="main">
+        <div class="jumbotron">
+            <div class="col-sm-8 mx-auto">
+                <h1 class="h2 mb-4">Event Type</h1>
+                <h5 class="mb-5">Select Event Check-In Type:</h5>
+                <ng-container *ngIf="loaded && eventTypes">
+                    <div *ngFor="let event of eventTypes">
+                        <div class="card border-primary mb-5">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ event.label }}</h5>
+                                <p class="card-text">{{ event.desc }}</p>
+                                <a [routerLink]="['/event-listings/'+event.event_type_id]" class="card-link stretched-link">{{ event.upcoming_events
+                                    }} Upcoming Events<span class="float-right">View Events</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </main>
+
+</div>

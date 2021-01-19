@@ -20,9 +20,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.authService.getToken());
     const token = this.authService.getToken();
-    if (!token) {            
+    if (!token || token === null) {            
       this.router.navigate(['login']);
     }
+    else {
     this.showNav = true;
+    }
   }
 }
