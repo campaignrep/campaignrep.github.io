@@ -14,6 +14,7 @@ export class EventCheckinComponent implements OnInit {
   eventId: any = null;
   eventTypeId: any = null;
   event: any = null;
+  checkInDataCount: any = null;
   loaded = false;
   searchForm: any;
 
@@ -42,6 +43,13 @@ export class EventCheckinComponent implements OnInit {
     this.eventListService.getEventById(this.eventId).subscribe(res => {
       this.event = Object.keys(res).map(e => res[e]);
       this.loaded = true;
+      this.loadCheckInCount();
+    });
+  }
+
+  loadCheckInCount() {
+    this.eventListService.getCheckInCount(this.eventId).subscribe(res => {
+      this.checkInDataCount = res;
     });
   }
 

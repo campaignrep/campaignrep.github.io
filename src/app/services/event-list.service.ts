@@ -36,4 +36,15 @@ export class EventListService {
         };
         return this.http.get<any>(`https://monte.campaignrep.org/api/event/` + eventId, httpOptions);
     }
+
+    getCheckInCount(eventId: any) {
+        const token = this.authService.getToken() || '';
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'X-CSRF-Token': token,
+                'Content-Type': 'application/json'
+            })
+        };
+        return this.http.get<any>(`https://monte.campaignrep.org/api/checkin_count/` + eventId, httpOptions);       
+    }
 }

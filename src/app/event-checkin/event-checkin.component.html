@@ -18,10 +18,10 @@
                         </h6>
                         <p class="card-text">{{ event[0].address_street}}, {{ event[0].city }}<br>{{ event[0].state_abbr }} {{ event[0].postal_code }}</p>
 
-                        <div class="card mx-auto mb-4" style="max-width: 200px;">
+                        <div class="card mx-auto mb-4" style="max-width: 200px;" *ngIf="checkInDataCount">
                             <div class="card-body">
                                 <strong>Checked-In:</strong>
-                                <h4><span class="text-success">12</span></h4>
+                                <h4><span class="text-success">{{ checkInDataCount.checkin_out }}</span></h4>
                             </div>
                         </div>
                     </div>
